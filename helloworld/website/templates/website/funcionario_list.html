@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários</title>
+</head>
+<body>
+    <h1>Lista de Funcionários</h1>
+
+    <table>
+        <tbody>
+        <tr>
+        <td>Nome</td>
+        <td>Sobrenome</td>
+        <td>Salário</td>
+        <td>Tempo de Serviço</td>
+        </tr>
+        {% for funcionario in object_list %}
+         <tr>
+         <td>{{ funcionario.name }}</td>
+         <td>{{ funcionario.lastName }}</td>
+         <td>{{ funcionario.salary }}</td>
+         <td>{{ funcionario.serviceTime }}</td>
+         <td><a href="../funcionario-update/{{ funcionario.id }}">Editar</a> </td>
+         <td><a href="../funcionario-delete/{{ funcionario.id }}">Excluir</a> </td>
+         </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="../funcionario-add">Cadastrar Novo</a>
+    <a href="/">Voltar</a>
+</body>
+</html>

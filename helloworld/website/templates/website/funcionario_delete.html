@@ -1,0 +1,5 @@
+<form method="post">{% csrf_token %}
+    <p>Deseja realmente deletar "{{ object.name }} {{ object.lastName }}"?</p>
+    <input type="submit" value="Deletar">
+    <a href="../funcionario-list/">Cancelar</a>
+</form>
